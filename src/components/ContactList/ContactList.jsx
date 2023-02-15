@@ -10,6 +10,8 @@ const ContactList = ()=> {
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
   const contacts = useSelector(getContacts);
+  
+  
 
 
   const onDeleteButton = id => dispatch(deleteContact(id));
@@ -20,8 +22,9 @@ const ContactList = ()=> {
       contact.name.toLowerCase().includes(normalizedFilter),
     );};
 
+
   const dataUser = visibleContacts();
-  console.log(dataUser);
+
   return (<div>
     <h4 className="m-auto text-lg font-semibold">Contacts</h4>
     <ul className='space-y-1 mt-6' >

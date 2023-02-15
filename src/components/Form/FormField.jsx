@@ -30,17 +30,21 @@ const schema = Yup.object().shape({
 const FormField = () => {
 const dispatch = useDispatch();
 const contacts = useSelector(getContacts);
+console.log(contacts);
+
+
 
 
 
 const setNewContact = (newContact)=> {
   const isMatch = contacts.find(contact => contact.name === newContact.name || contact.number === newContact.number)
-      
+    
        if (isMatch) { 
          alert(`${newContact.name} is alredy in contacts`);
          return;
        }
         dispatch(addContact(newContact));
+
       };
 
 
